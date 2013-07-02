@@ -1,9 +1,12 @@
 package com.megamip.voice;
 
 import com.example.megamip_voice_module_1_0.R;
+import com.mkyong.android.WebViewActivity;
+
 import java.util.ArrayList;
 import android.app.Activity;
 import android.content.ActivityNotFoundException;
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.speech.RecognizerIntent;
@@ -16,7 +19,7 @@ import android.widget.Toast;
 public class MainActivity extends Activity {
 
 	protected static final int RESULT_SPEECH = 1;
-
+    private Context context = this.getApplicationContext();
 	private ImageButton btnSpeak;
 	private TextView txtText;
 
@@ -88,6 +91,8 @@ public class MainActivity extends Activity {
 		switch(action0){
 		
 		case 'p' :
+			Intent intent = new Intent(context, WebViewActivity.class);
+			startActivity(intent);
 			break;
 		case 'v' :
 			break;
